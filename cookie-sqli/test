@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export FLAG=IF_I_SEE_THIS_THIS_AINT_PATCHED
+export FLAG_SECRET=ohno
+# this is to ignore some deprecation warnings with our version of flask lol
+py.test -Wignore
