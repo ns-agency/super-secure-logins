@@ -14,9 +14,18 @@ pip install -e app/
 
 ## How to run the server
 
+_this does requite sqlite3 to be installed on your pc_
+
+_also repeat the pipenv set up from above_
+
 ```bash
+# set up some vars
 export FLAG=123
 export FLAG_SECRET=123
-export DB_CONNECT_STRING='some/path/so/a/sqlite3/db/you/have/created'
+# create a db 
+touch test.db
+sqlite3 test.db < setup.sql
+# link the db
+export DB_CONNECTION_STRING='sqlite:////some/absolute/path/to/the/above/test.db'
 python3 run.py
 ```
