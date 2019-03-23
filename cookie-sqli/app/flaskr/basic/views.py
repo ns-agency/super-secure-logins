@@ -6,7 +6,7 @@ from . import app
 
 
 def isLoggedIn(session):
-    r = current_app.db.execute(f"select * from admins where session = {session}").first()
+    r = current_app.db.execute(f"select * from admins where session = '{session}'").first()
     return r != None
 
 @app.route('/', methods=["GET","POST"])
